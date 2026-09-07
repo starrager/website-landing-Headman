@@ -9,7 +9,7 @@
                 <a v-for="l in links" :key="l.href" :href="l.href">{{ l.label }}</a>
             </nav>
             <div class="bar__actions">
-                <a href="tel:+70000000000" class="phone">+7 (000) 000-00-00</a>
+                <a href="tel:+73422357806" class="phone">+7 (342) 235‒78‒06</a>
                 <a href="#contacts" class="btn btn--small">Записаться</a>
                 <button class="burger" :class="{ 'is-open': menuOpen }" @click="menuOpen=!menuOpen" aria-label="Меню"><span></span></button>
             </div>
@@ -17,7 +17,7 @@
         <transition name="menu">
             <nav v-if="menuOpen" class="nav nav--mobile">
                 <a v-for="l in links" :key="l.href" :href="l.href" @click="menuOpen=false">{{ l.label }}</a>
-                <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+                <a href="tel:+73422357806">+7 (342) 235‒78‒06</a>
             </nav>
         </transition>
     </header>
@@ -33,7 +33,7 @@
                 <p class="hero__lede">HEADMAN — это стрижка, уход и бритьё на уровне, который в вашем городе задаёт стандарт. Пять салонов сети, одна школа мастерства и мастера, которым доверяют головы своих клиентов.</p>
                 <div class="hero__cta">
                     <a href="#contacts" class="btn">Записаться на стрижку</a>
-                    <a href="tel:+70000000000" class="hero__phone">+7 (000) 000-00-00</a>
+                    <a href="tel:+73422357806" class="hero__phone">+7 (342) 235‒78‒06</a>
                 </div>
                 <div class="hero__gallery">
                     <figure class="hero__figure hero__figure--main">
@@ -84,6 +84,7 @@
                         <span class="services__price">{{ s.price || 'по прайсу' }}</span>
                     </li>
                 </ul>
+                <a target="_blank" href="https://vk.ru/@headman.perm-prais-ot-01052026" class="link-underline">Все услуги и цены →</a>
             </div>
         </section>
         <section id="about" class="about">
@@ -123,7 +124,7 @@
                         <h2 class="promo__title">Мужской гигиенический маникюр уже в HEADMAN</h2>
                         <p class="promo__sub">Приходи и пробуй — запишись вместе со стрижкой или отдельным визитом.</p>
                     </div>
-                    <a href="#contacts" class="btn">Записаться</a>
+                    <a href="https://n43526.yclients.com/select-city/48710/select-branch?o=" target="_blank" class="btn">Записаться</a>
                 </div>
             </div>
         </section>
@@ -136,7 +137,7 @@
             </div>
             <div class="footer__col">
                 <h3>Записаться</h3>
-                <a href="tel:+70000000000" class="footer__phone">+7 (000) 000-00-00</a>
+                <a href="tel:+73422357806" class="footer__phone">+7 (342) 235‒78‒06</a>
                 <p>Ежедневно, 09:00 — 21:00</p>
             </div>
             <div class="footer__col">
@@ -146,9 +147,10 @@
             </div>
             <div class="footer__col">
                 <h3>Мы на связи</h3>
-                <a href="#">Telegram</a>
-                <a href="#">VK</a>
-                <a href="#">2ГИС</a>
+                <a href="tg://resolve?domain=headman_salon" target="_blank">Telegram</a>
+                <a href="https://vk.ru/headman.perm" target="_blank">VK</a>
+                <a href="https://2gis.ru/perm/firm/70000001007384469?m=56.205037%2C58.00613%2F16.5" target="_blank">2ГИС</a>
+                <a href="mailto:headman@mail.ru?subject=Запись%20в%20барбершоп&body=Здравствуйте!%20Хочу%20записаться" target="_blank">Почта</a>
             </div>
         </div>
         <div class="wrap footer__bottom">
@@ -166,6 +168,8 @@ const scrolled=ref(false)
 const menuOpen=ref(false)
 const ready=ref(false)
 const year=new Date().getFullYear()
+
+
 
 const links=[
     { href:'#services', label:'Услуги' },
@@ -188,10 +192,10 @@ const awards=[
 ]
 
 const services=[
-    { name:'Мужская стрижка', desc:'Классика, фейд, кроп — подбираем форму под лицо и структуру волос.', price:'от 1000 ₽' },
-    { name:'Детская стрижка', desc:'Спокойная обстановка и мастера, которые умеют находить общий язык с детьми.', price:'по прайсу' },
-    { name:'Мужская химзавивка', desc:'Объём и текстура для причёсок, которым нужен характер, а не укладка каждое утро.', price:'по прайсу' },
-    { name:'Гигиенический маникюр', desc:'Аккуратные руки без похода в отдельный салон — прямо в кресле барбера.', tag:'Новинка', price:'по прайсу' },
+    { name:'Мужская стрижка', desc:'Классика, фейд, кроп — подбираем форму под лицо и структуру волос.', price:'1300-2300 ₽' },
+    { name:'Детская стрижка', desc:'Спокойная обстановка и мастера, которые умеют находить общий язык с детьми.', price:'1100-2100 ₽' },
+    { name:'Мужская химзавивка', desc:'Объём и текстура для причёсок, которым нужен характер, а не укладка каждое утро.', price:'8500 ₽' },
+    { name:'Гигиенический маникюр', desc:'Аккуратные руки без похода в отдельный салон — прямо в кресле барбера.', tag:'Новинка', price:'1350 ₽' },
 ]
 
 const onScroll=()=>{
@@ -221,6 +225,30 @@ onBeforeUnmount(()=>{
 </script>
 
 <style scoped>
+.link-underline{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--paper);
+    font-weight:700;
+    font-size:1.02rem;
+    text-decoration:none;
+    border-bottom:2px solid var(--brass);
+    padding-bottom:4px;
+    transition:all 0.3s var(--ease);
+    letter-spacing:0.01em;
+}
+.link-underline .arrow{
+    display:inline-block;
+    transition:transform 0.3s var(--ease);
+}
+.link-underline:hover{
+    color:var(--brass-bright);
+    border-bottom-color:var(--brass-bright);
+}
+.link-underline:hover .arrow{
+    transform:translateX(6px);
+}
 html,
 body{
     width:100%;
